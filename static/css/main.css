@@ -11,10 +11,6 @@ p, label {
     margin:  20px;
     display: inline-block;
 }
-img {
-    margin: 60px 0 30px 0;
-    width: 250px;
-}
 input {
   width: 300px;
   margin: 20px 20px;
@@ -41,33 +37,74 @@ input:focus {
     background-color: MediumVioletRed;
 }
 
-/* (A) THE BASE */
-.bar {
+.alert {
+  position: relative;
+  top: 10;
+  left: 0;
+  width: auto;
+  height: auto;
   padding: 10px;
   margin: 10px;
-  color: #333;
-  background: #fafafa;
-  border: 1px solid #ccc;
+  line-height: 1.8;
+  border-radius: 5px;
+  cursor: hand;
+  cursor: pointer;
+  font-family: sans-serif;
+  font-weight: 400;
 }
 
-/* (B) THE VARIATIONS */
+.alertCheckbox {
+  display: none;
+}
+
+:checked + .alert {
+  display: none;
+}
+
+.alertText {
+  display: table;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 16px;
+}
+
+.alertClose {
+  float: right;
+  padding-top: 5px;
+  padding-left: 10px;
+  font-size: 10px;
+}
+
+.clear {
+  clear: both;
+}
+
 .info {
-  color: #204a8e;
-  background: #c9ddff;
-  border: 1px solid #4c699b;
+  background-color: #EEE;
+  border: 1px solid #DDD;
+  color: #999;
 }
+
 .success {
-  color: #2b7515;
-  background: #ecffd6;
-  border: 1px solid #617c42;
+  background-color: #EFE;
+  border: 1px solid #DED;
+  color: #9A9;
 }
-.warn {
-  color: #756e15;
-  background: #fffbd1;
-  border: 1px solid #87803e;
+
+.notice {
+  background-color: #EFF;
+  border: 1px solid #DEE;
+  color: #9AA;
 }
+
+.warning {
+  background-color: #FDF7DF;
+  border: 1px solid #FEEC6F;
+  color: #C9971C;
+}
+
 .error {
-  color: #ba3939;
-  background: #ffe0e0;
-  border: 1px solid #a33a3a;
+  background-color: #FEE;
+  border: 1px solid #EDD;
+  color: #A66;
 }

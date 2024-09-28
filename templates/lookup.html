@@ -1,27 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Book Lookup</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-</head>
-<body>
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            {% for message in messages %}
-                <p class="error bar">{{ message }}</p>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
-    <h1>Hello!</h1>
-    <h3>Welcome to the Amazon Book locator. Please enter an ISBN below and we will get you all the information you could ever need!</h3>
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Wow, what a great choice!</h1>
+    <h3>Here is some of the Amazon data for that book:</h3>
+    <img alt="the main image on the amazon listing for {{ data.title }}" src={{ data.img_link }} >
     <br>
-    <form action="lookup" method="post">
-        <label for='isbn_input'>ISBN Number:</label>
-        <br>
-        <input type="text" name="isbn_input">
-        <br>
-        <input type="submit" value="Lookup" id="greet">
-    </form>
-</body>
-</html>
+    <p>Title:</p>
+    <p>{{ data.title }}</p>
+    <br>
+    <p>Current Listed Price:</p>
+    <p>{{ data.cost }}</p>
+    <br>
+    {% if data.g_book_option %}
+        <p>Good news! You can get this book for free on Google Books!</p>
+    {% else %}
+        <p>Aw-shucks. We couldn't find a free copy of this book on Google Books.</p>
+    {% endif %}
+    <br>
+    <p>Want to look up another book? <a href="/">Click Me!</a></p>
+{% endblock %}

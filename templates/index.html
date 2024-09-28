@@ -9,6 +9,7 @@
         <br>
         <input type="text" name="isbn_input">
         <br>
-        <input type="submit" value="Lookup" id="greet">
+        <input type="submit" value="Lookup" id="greet" onclick="document.getElementById('loading-spinner').style.display = ''">
+        <i id="loading-spinner" style="display: none" class="fa fa-circle-o-notch fa-spin"></i>
     </form>
 {% endblock %}
