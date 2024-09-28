@@ -1,13 +1,15 @@
 body {
     text-align: center;
     background-color: SlateGrey;
+    font-family: sans-serif;
 }
-p {
+p, label, h1, h3 {
     color: white;
-    font-family: Shanti;
+}
+p, label {
     font-size: 1.2em;
-    display: inline-block;
     margin:  20px;
+    display: inline-block;
 }
 img {
     margin: 60px 0 30px 0;
@@ -19,7 +21,6 @@ input {
   height: 50px;
   border: none;
   border-radius: 10px;
-  font-family: Shanti;
   font-size: 1.3em;
   text-align: center;
 }
@@ -38,4 +39,35 @@ input:focus {
 
 #greet:hover {
     background-color: MediumVioletRed;
+}
+
+/* (A) THE BASE */
+.bar {
+  padding: 10px;
+  margin: 10px;
+  color: #333;
+  background: #fafafa;
+  border: 1px solid #ccc;
+}
+
+/* (B) THE VARIATIONS */
+.info {
+  color: #204a8e;
+  background: #c9ddff;
+  border: 1px solid #4c699b;
+}
+.success {
+  color: #2b7515;
+  background: #ecffd6;
+  border: 1px solid #617c42;
+}
+.warn {
+  color: #756e15;
+  background: #fffbd1;
+  border: 1px solid #87803e;
+}
+.error {
+  color: #ba3939;
+  background: #ffe0e0;
+  border: 1px solid #a33a3a;
 }

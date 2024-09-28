@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Book Lookup</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p class="error bar">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <h1>Hello!</h1>
+    <h3>Welcome to the Amazon Book locator. Please enter an ISBN below and we will get you all the information you could ever need!</h3>
+    <br>
+    <form action="lookup" method="post">
+        <label for='isbn_input'>ISBN Number:</label>
+        <br>
+        <input type="text" name="isbn_input">
+        <br>
+        <input type="submit" value="Lookup" id="greet">
+    </form>
+</body>
+</html>

@@ -1,21 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Say Hello</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-</head>
-<body>
-    <img src="https://raw.githubusercontent.com/MariyaSha/SimpleGreetingApp/main/logo.png">
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Hello!</h1>
+    <h3>Welcome to the Amazon Book locator. Please enter an ISBN below and we will get you all the information you could ever need!</h3>
     <br>
-    <form action="greet" method="post">
-        {% for message in get_flashed_messages() %}
-             <p>{{ message }}</p>
-         {% endfor %}
+    <form action="lookup" method="post">
+        <label for='isbn_input'>ISBN Number:</label>
         <br>
-        <input type="text" name="name_input">
+        <input type="text" name="isbn_input">
         <br>
-        <input type="submit" value="GREET" id="greet">
+        <input type="submit" value="Lookup" id="greet">
     </form>
-</body>
-</html>
+{% endblock %}
